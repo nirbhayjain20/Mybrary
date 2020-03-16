@@ -18,7 +18,7 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: false, limit: '10mb'}));
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/mybrary', {
+mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
